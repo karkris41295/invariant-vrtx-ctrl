@@ -6,7 +6,7 @@ from matplotlib import animation
 import mpctools as mpc
 
 #%% Parameter Setup #############################################################
-n = 5 # number of vortices
+n = 5 # number of vortices (including actuators)
 act = 1 # number of fixed vortex actuators
 h_omega = 0#0.01 # frequency of oscillation of href
 ep = -.0 # amplitude of oscillation
@@ -43,6 +43,8 @@ r0 = 15*np.array([[.5, 0],
                [0, 1]], dtype = 'float64')
 
 '''
+
+#goal state (offsets are angles between vortices like the Boatto1999 paper)
 offset1 = np.deg2rad(90)
 offset2 = np.deg2rad(90)
 rg = 1*np.array([[1*np.cos(offset1), 1*np.sin(offset1)], 
@@ -54,6 +56,7 @@ rg = 1*np.array([[1*np.cos(offset1), 1*np.sin(offset1)],
                [0, 2],
                [2, 0]], dtype = 'float64')
 
+# initial state
 offsetB = np.deg2rad(90)
 offsetC = np.deg2rad(90)
 r0 = 1*np.array([[1*np.cos(offsetC), 1*np.sin(offsetC)], 
